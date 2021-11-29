@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="109.82">
+    <testcase classname="Find your student accommodation in Unite Students accomodation" name="find_your_student_accomodation_in_Bath_001" time="36.074">
+        <system-out><![CDATA[Given The user search student accomodation in "Bath"........................passed
+When user click on "Charlton Court" view rooms..............................passed
+Then Validate "Charlton Court" is displayed to book a viewing...............passed
+When user select "Studio, Premium Range 1" to book..........................passed
+Then Validate checkout page displayed.......................................passed
+When the user enters new account details and continue.......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Find your student accommodation in Unite Students accomodation" name="find_your_student_accomodation_in_Glasgow_002" time="36.33">
+        <system-out><![CDATA[Given The user search student accomodation in "Glasgow".....................passed
+When user click on "Blackfriars" view rooms.................................passed
+Then Validate "Blackfriars" is displayed to book a viewing..................passed
+When user select "En-Suite, Classic" to book................................passed
+Then Validate checkout page displayed.......................................passed
+When the user enters new account details and continue.......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Find your student accommodation in Unite Students accomodation" name="find_your_student_accomodation_in_Edinburgh_003" time="37.254">
+        <system-out><![CDATA[Given The user search student accomodation in "Edinburgh"...................passed
+When user click on "Murano House" view rooms................................passed
+Then Validate "Murano House" is displayed to book a viewing.................passed
+When user select "Studio, Classic" to book..................................passed
+Then Validate checkout page displayed.......................................passed
+When the user enters new account details and continue.......................passed
+]]></system-out>
+    </testcase>
+</testsuite>
