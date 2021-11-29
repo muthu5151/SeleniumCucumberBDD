@@ -1,8 +1,0 @@
-com\test\cucumber\pageobjects\Checkout_pageobjects.class
-com\test\cucumber\utilities\ReadProperties.class
-com\test\cucumber\steps\Unitestudents_steps.class
-com\test\cucumber\utilities\ReusableOperations.class
-com\test\cucumber\runner\AllRunner.class
-com\test\cucumber\pageobjects\Results_pageobjects.class
-com\test\cucumber\steps\Hooks.class
-com\test\cucumber\pageobjects\Search_pageobjects.class
