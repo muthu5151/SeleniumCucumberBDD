@@ -16,7 +16,7 @@ import io.cucumber.junit.CucumberOptions;
 				"json:target/cucumber-reports/CucumberTestReport.json",
 				"junit:target/cucumber-reports/CucumberTestReport.xml"
 		},
-		tags = "@UniteStudents"
+		tags = ""
 		)
 
 public class AllRunner {
