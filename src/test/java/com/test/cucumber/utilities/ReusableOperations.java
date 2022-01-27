@@ -2,6 +2,7 @@ package com.test.cucumber.utilities;
 import java.util.Random;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -37,10 +38,14 @@ public class ReusableOperations {
 		WaitUntilElementVisible(element);
 		return element.getText();
 	}
+	
+	public void scrollbyPixels() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,250)", "");
+	}
 
 	public void moveToElement(WebElement element){
-		Actions actions = new Actions(driver);
-		actions.moveToElement(element).build().perform();
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 	public String randomString(int length) {

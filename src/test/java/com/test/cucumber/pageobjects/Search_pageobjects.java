@@ -18,7 +18,7 @@ public class Search_pageobjects extends ReusableOperations {
 	@FindBy(xpath="//input[@placeholder='Search by City, Property, University']")
 	public WebElement txtSearch;
 	
-	@FindBy(xpath="(//button[@aria-label='Close'])[2]")
+	@FindBy(xpath="(//button[text()='Reject All'])[2]")
 	public WebElement btnAcceptCookies;
 	
 	@FindBy(xpath="//button[@type='submit']")

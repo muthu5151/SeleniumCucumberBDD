@@ -18,8 +18,12 @@ public class Results_pageobjects extends ReusableOperations {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath="//div[contains(@class,'PropertyListing')]")
+	@FindBy(xpath="//*[contains(text(),'Type of room')]")
 	public WebElement lblPropertylist;
+	
+	@FindBy(xpath="//*[text()='Book']")
+	public WebElement btnBook;
+	
 
 	public boolean isPropertylistDisplayed() {
 		WaitUntilElementVisible(lblPropertylist);
@@ -27,15 +31,13 @@ public class Results_pageobjects extends ReusableOperations {
 	}
 
 	public void clickOnViewRooms(String hotel) {
-		WebElement element = driver.findElement(By.xpath("//a[text()='"+hotel+"']"
-				+ "/ancestor::div[contains(@class,'PropertyListing')]"
-				+ "//span[text()='View rooms']//parent::button"));
+		WebElement element = driver.findElement(By.xpath("//a[text()='"+hotel+"']/../../div[3]//*[text()='View rooms']"));
 		moveToElement(element);
 		clickOnElement(element);
 	}
 
 	public boolean validateBooking(String hotel) {
-		List<WebElement> elements = driver.findElements(By.xpath("//h1[text()='"+hotel+"']"));
+		List<WebElement> elements = driver.findElements(By.xpath("//div[text()='"+hotel+"']"));
 		if(elements.size()>0)
 			return true;
 		else
@@ -44,11 +46,17 @@ public class Results_pageobjects extends ReusableOperations {
 
 	public void ClickOnBook(String room) {
 		String[] value = room.split("\\,");
-		WebElement element = driver.findElement(By.xpath("//*[text()='"+value[0].trim()
-				+"']/../..//*[text()='"+value[1].trim()+"']"
-				+ "/ancestor::div[@class='list-element']//*[text()='Book']//parent::button"));
+		scrollbyPixels();
+		scrollbyPixels();
+		WebElement element = driver.findElement(By.xpath("//*[text()='"+value[0].trim().toUpperCase()+"']"
+				+ "/..//*[text()='"+value[1].trim().toUpperCase()+"']"
+				+ "/../..//*[text()='View dates']"));
 		moveToElement(element);
 		clickOnElement(element);
+		
+		moveToElement(btnBook);
+		clickOnElement(btnBook);
 	}
+	
 
 }
