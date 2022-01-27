@@ -20,10 +20,10 @@ public class Results_pageobjects extends ReusableOperations {
 
 	@FindBy(xpath="//*[contains(text(),'Type of room')]")
 	public WebElement lblPropertylist;
-	
+
 	@FindBy(xpath="//*[text()='Book']")
 	public WebElement btnBook;
-	
+
 
 	public boolean isPropertylistDisplayed() {
 		WaitUntilElementVisible(lblPropertylist);
@@ -46,17 +46,26 @@ public class Results_pageobjects extends ReusableOperations {
 
 	public void ClickOnBook(String room) {
 		String[] value = room.split("\\,");
+		WebElement element = null;
 		scrollbyPixels();
-		scrollbyPixels();
-		WebElement element = driver.findElement(By.xpath("//*[text()='"+value[0].trim().toUpperCase()+"']"
-				+ "/..//*[text()='"+value[1].trim().toUpperCase()+"']"
-				+ "/../..//*[text()='View dates']"));
+
+		for(int i=0;i<4;i++) {
+			try {
+				element = driver.findElement(By.xpath("//*[text()='"+value[0].trim().toUpperCase()+"']"
+						+ "/..//*[text()='"+value[1].trim().toUpperCase()+"']"
+						+ "/../..//*[text()='View dates']"));
+				break;
+			} catch (Exception e) {
+				scrollbyPixels();
+			}
+		}
+
 		moveToElement(element);
 		clickOnElement(element);
-		
+
 		moveToElement(btnBook);
 		clickOnElement(btnBook);
 	}
-	
+
 
 }

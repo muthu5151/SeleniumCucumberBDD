@@ -9,9 +9,8 @@ Feature: Find your student accommodation in Unite Students accomodation
     Then Validate checkout page displayed
     When the user enters new account details and continue
 
-
     Examples: 
       | tc_id | location  | hotel          | rooms                   |
       |   001 | Bath      | Charlton Court | Studio, Premium Range 1 |
-      |   002 | Glasgow   | Blackfriars    | En-Suite, Classic       |
+      |   002 | Glasgow   | Blackfriars    | Ensuite, Classic       |
       |   003 | Edinburgh | Murano House   | Studio, Classic         |
